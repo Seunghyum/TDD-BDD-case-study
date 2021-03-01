@@ -1,4 +1,5 @@
 webpack.config.**.js
+**.spec.**
 jest.config.js
 node_modules/
 public/
