@@ -1,32 +1,33 @@
 {
-  "name": "BDD-case-study",
+  "name": "bdd-case-study",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --open --config ./build/webpack.config.dev.js",
     "lint": "tslint .",
     "lint:fix": "tslint . --fix",
-    "format": "pretty-quick",
+    "format": "pretty-quick --staged --ignore-path=.prettierignore",
     "build": "webpack --config ./build/webpack.config.prod.js",
     "test": "jest --config=jest.config.js",
     "test:watch": "jest --config=jest.config.js --watch",
-    "test:cover": "jest --coverage"
+    "test:cover": "jest --coverage",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
       "eslint --fix",
-      "pretty-quick --staged",
-      "test --findRelatedTests",
+      "format",
+      "jest --findRelatedTests",
       "git add"
     ],
     "*.+(ts|tsx)": [
-      "tslint --fix",
-      "pretty-quick --staged",
-      "test --findRelatedTests",
+      "lint:fix",
+      "format",
+      "jest --findRelatedTests",
       "git add"
     ],
     "*.+(json|css|md)": [
-      "pretty-quick --staged",
+      "format",
       "git add"
     ]
   },
@@ -68,7 +69,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.2.0",
-    "husky": "=4",
+    "husky": "^5.1.2",
     "jest": "^26.6.3",
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.5.4",

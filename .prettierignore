@@ -1,2 +1,9 @@
-package.json;
-tsconfig.json.husky;
+node_modules
+public
+bin
+build
+package.json
+yarn.lock
+.eslintignore
+.prettierignore
+.husky

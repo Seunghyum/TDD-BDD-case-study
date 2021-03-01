@@ -59,7 +59,7 @@ type CardItemProps = {
   onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
-export const testId = 'bookmark';
+export const testId = 'bookmarks';
 
 function LifestyleCard({ imageUrl, nickname, profileImageUrl, isBookmarked, onClick }: CardItemProps): ReactElement {
   return (

@@ -6,3 +6,4 @@ public/
 bin/
 build/
 package.json
+yarn.lock

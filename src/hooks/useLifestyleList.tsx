@@ -27,7 +27,7 @@ function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> & Us
         .then((res) => res.json())
         .catch((err) => new Error(err)),
     {
-      getNextPageParam: (lastPage, pages) => lastPage.nextCursor,
+      // getNextPageParam: (lastPage, pages) => lastPage.nextCursor,
     },
   ) as UseInfiniteQueryResult<LifestyleData[], Error>;
 

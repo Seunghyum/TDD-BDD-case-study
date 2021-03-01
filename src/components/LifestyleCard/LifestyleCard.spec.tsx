@@ -25,7 +25,7 @@ describe('LifestyleCard', () => {
 
     const { container } = render(
       <LifestyleCard
-        imageUrl="test1.jpg"
+        imageUrl="test.jpg"
         nickname="테스트 유저"
         profileImageUrl="test2.jpg"
         isBookmarked
