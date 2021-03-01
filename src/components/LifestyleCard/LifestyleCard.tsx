@@ -46,6 +46,9 @@ const BookmarkButton = styled.button`
   position: absolute;
   right: 10px;
   bottom: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
 `;
 
 type CardItemProps = {

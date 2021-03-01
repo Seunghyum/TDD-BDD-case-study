@@ -27,7 +27,7 @@ exports[`LifestyleCard renders LifestyleCard component 1`] = `
       src="test1.jpg"
     />
     <button
-      class="sc-iBPRYJ fZXcae"
+      class="sc-iBPRYJ bEsZG"
       data-testid="bookmark"
       type="button"
     >

@@ -21,7 +21,7 @@ const ContainerBlock = styled.div<Partial<ContainerProps>>`
 `;
 
 type ContainerProps = {
-  fluid: boolean;
+  fluid?: boolean;
   children: React.ReactNode;
 };
 
