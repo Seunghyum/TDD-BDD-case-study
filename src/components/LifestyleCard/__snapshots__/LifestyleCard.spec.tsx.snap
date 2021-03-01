@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LifestyleCard renders LifestyleCard component 1`] = `
+<div
+  class="sc-gsTCUz cwkpTi"
+>
+  <div
+    class="sc-dlfnbm kKmhwS"
+  >
+    <img
+      alt="profile thumbnail"
+      class="sc-hKgILt ebZgFx"
+      src="test2.jpg"
+    />
+    <div
+      class="sc-eCssSg kKIFdq"
+    >
+      테스트 유저
+    </div>
+  </div>
+  <div
+    class="sc-jSgupP dtZhcH"
+  >
+    <img
+      alt="content thumbnail"
+      class="sc-gKsewC fhZKnu"
+      src="test1.jpg"
+    />
+    <button
+      class="sc-iBPRYJ fZXcae"
+      data-testid="bookmark"
+      type="button"
+    >
+      <div
+        class="sc-bdfBwQ fHaqba"
+      >
+        <img
+          alt="bookmark-icon"
+          class="bookmark-icon"
+          src=""
+        />
+      </div>
+    </button>
+  </div>
+</div>
+`;
