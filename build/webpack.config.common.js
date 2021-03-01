@@ -14,7 +14,8 @@ module.exports = {
     extensions: ['*', '.ts', '.tsx', '.js'],
     alias: {
       '~src': resolve(__dirname, '../src'),
-      '~components': resolve(__dirname, '../components'),
+      '~components': resolve(__dirname, '../src/components'),
+      '~pages': resolve(__dirname, '../src/pages'),
     },
   },
   module: {
