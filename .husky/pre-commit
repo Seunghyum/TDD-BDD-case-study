@@ -4,3 +4,5 @@
 yarn lint:fix
 yarn format
 yarn test
+yarn test:make-badges
+git add README.md

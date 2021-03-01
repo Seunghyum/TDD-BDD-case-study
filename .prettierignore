@@ -1,9 +1,12 @@
-node_modules
-public
-bin
-build
+node_modules/
+public/
+bin/
+build/
+coverage/
 package.json
 yarn.lock
+.gitignore
 .eslintignore
 .prettierignore
 .husky
+README.md
