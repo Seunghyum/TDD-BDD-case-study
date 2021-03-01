@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "module": "ESnext",
+    "jsx": "react",
+    "target": "ESnext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "~src/*":  ["src/*"],
+      "~components/*": ["src/components/*"],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+    ],
+  },
+  "include": ["src"]
+}
