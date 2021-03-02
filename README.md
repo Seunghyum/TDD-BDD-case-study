@@ -6,7 +6,7 @@ TDD / BDD를 적용해보며
 
 | Statements                  | Branches                | Functions                 | Lines                |
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-95%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-57.14%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-97.37%25-brightgreen.svg)    |
+| ![Statements](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-57.14%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-97.44%25-brightgreen.svg)    |
 
 ## 작업 내용 및 느낀점
 

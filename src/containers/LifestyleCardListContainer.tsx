@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import styled from 'styled-components';
 
 import LifestyleCard from '~src/components/LifestyleCard';
@@ -25,7 +25,7 @@ const ErrorBlock = styled.div`
 `;
 
 function CardList(): ReactElement {
-  const { status, data, bookmarks, addBookmark, removeBookmark } = useLifestyleList();
+  const { status, data, bookmarks, addBookmark, removeBookmark, fetchNextPage } = useLifestyleList();
 
   const handleBookmarkButton = (index: number) => {
     if (bookmarks.has(index)) removeBookmark(index);
@@ -35,6 +35,7 @@ function CardList(): ReactElement {
 
   return (
     <>
+      <button onClick={() => fetchNextPage({ pageParam: data.pages.length + 1 })}>hello</button>
       <CardListBlock>
         {status === 'loading' ? (
           <LoadingBlock>로딩중...</LoadingBlock>

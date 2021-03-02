@@ -5113,13 +5113,6 @@ json3@^3.3.3:
   resolved "https://registry.yarnpkg.com/json3/-/json3-3.3.3.tgz#7fc10e375fc5ae42c4705a5cc0aa6f62be305b81"
   integrity sha512-c7/8mbUsKigAbLkD5B010BK4D9LZm7A1pNItkEwiUZRpIN66exu/e7YQWysGun+TRKaJp8MhemM+VkfWv42aCA==
 
-json5-jest@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/json5-jest/-/json5-jest-1.0.1.tgz#3839f6de8a89be4366b6ad1c60aa1a2c2fe9b352"
-  integrity sha512-3LwSMrhlQtbQQUUa6cImz+Aga8xs7LZCmS/Ke+Kgu6ZmyWOaGBnoUI1jnhEEJ3AM90k40oTGr/EnFchtv261mQ==
-  dependencies:
-    json5 "^1.0.1"
-
 json5@2.x, json5@^2.1.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
