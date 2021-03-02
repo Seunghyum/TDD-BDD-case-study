@@ -8,6 +8,8 @@ yarn.lock
 .gitignore
 .eslintignore
 .prettierignore
+tsconfig.json
 .husky
 .travis.yml
 README.md
+*.json

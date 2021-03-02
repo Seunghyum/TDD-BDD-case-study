@@ -6,7 +6,7 @@ TDD / BDD를 적용해보며
 
 | Statements                  | Branches                | Functions                 | Lines                |
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-50%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)    |
+| ![Statements](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-57.14%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-97.44%25-brightgreen.svg)    |
 
 ## 작업 내용 및 느낀점
 
@@ -44,7 +44,6 @@ TDD / BDD를 적용해보며
     - 북마크 체크 추가 & 삭제 로직 검증
     - sessionStorage에 재대로 저장하고 있는지 검증
 
-### 
 
 # 개념정리
 

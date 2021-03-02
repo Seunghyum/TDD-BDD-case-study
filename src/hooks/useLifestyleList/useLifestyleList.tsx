@@ -22,12 +22,15 @@ function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> & Us
 
   const result = useInfiniteQuery(
     INFINITE_LIFESTYLE,
-    (key, nextPageOffset = 1) =>
-      fetch(`https://s3.ap-northeast-2.amazonaws.com/bucketplace-coding-test/cards/page_${nextPageOffset}.json`)
+    ({ pageParam = 1 }) =>
+      fetch(`https://s3.ap-northeast-2.amazonaws.com/bucketplace-coding-test/cards/page_${pageParam}.json`)
         .then((res) => res.json())
         .catch((err) => new Error(err)),
     {
-      // getNextPageParam: (lastPage, pages) => lastPage.nextCursor,
+      getNextPageParam: (lastPage, allPages) => {
+        // 백엔드에서 값을 내려줄 때 전체 페이지, 현재 페이지를 주면 여기서 다음 페이지 / 이전 페이지가 있는지를 확인 후 로직을 수행하면 됨
+        return true;
+      },
     },
   ) as UseInfiniteQueryResult<LifestyleData[], Error>;
 
