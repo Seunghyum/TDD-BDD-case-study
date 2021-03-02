@@ -11,6 +11,7 @@ module.exports = {
     '^~src(.*)$': '<rootDir>/src$1',
     '^~components(.*)$': '<rootDir>/src/components$1',
     '^~pages(.*)$': '<rootDir>/src/pages$1',
+    '^.+\\.json5?$': 'json5-jest',
   },
   testMatch: [
     '<rootDir>/**/*.test.(js|jsx|ts|tsx)',
