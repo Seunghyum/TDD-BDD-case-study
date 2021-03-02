@@ -1,8 +1,9 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 import LifestyleCard from '~src/components/LifestyleCard';
 
+import useIntersectionObserver from '~src/hooks/useIntersectionObserver';
 import useLifestyleList from '~src/hooks/useLifestyleList';
 
 const CardListBlock = styled.div`
@@ -25,13 +26,21 @@ const ErrorBlock = styled.div`
 `;
 
 function CardList(): ReactElement {
-  const { status, data, bookmarks, addBookmark, removeBookmark, fetchNextPage } = useLifestyleList();
+  const { status, data, bookmarks, addBookmark, removeBookmark, fetchNextPage, hasNextPage } = useLifestyleList();
 
   const handleBookmarkButton = (index: number) => {
     if (bookmarks.has(index)) removeBookmark(index);
     else addBookmark(index);
     alert(bookmarks.size);
   };
+
+  const loadMoreRef = React.useRef();
+
+  useIntersectionObserver({
+    target: loadMoreRef,
+    onIntersect: fetchNextPage,
+    enabled: hasNextPage,
+  });
 
   return (
     <>
@@ -56,6 +65,7 @@ function CardList(): ReactElement {
           <ErrorBlock>요청을 처리하는 도중에 오류가 발생했어요!</ErrorBlock>
         )}
       </CardListBlock>
+      <div ref={loadMoreRef}></div>
     </>
   );
 }
