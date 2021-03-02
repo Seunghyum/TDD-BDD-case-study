@@ -7,45 +7,69 @@ import useLifestyleList from './useLifestyleList';
 import dummyData1 from './fixtures/dummy1.json';
 import dummyData2 from './fixtures/dummy2.json';
 
-const unmockedFetch = global.fetch;
 const queryClient = new QueryClient();
 
+const getUrlByPage = (page: number) =>
+  `https://s3.ap-northeast-2.amazonaws.com/bucketplace-coding-test/cards/page_${page}.json`;
+
 beforeAll(() => {
-  global.fetch = (page: any) =>
-    Promise.resolve({
-      json: () => {
-        switch (page) {
-          case 1:
-            return Promise.resolve(dummyData1);
-          case 2:
-            return Promise.resolve(dummyData2);
-        }
-      },
-    }) as Promise<Response>;
+  global.fetch = jest.fn().mockImplementation(
+    (page: any) =>
+      Promise.resolve({
+        json: () => {
+          switch (page) {
+            case getUrlByPage(1):
+              return Promise.resolve(dummyData1);
+            case getUrlByPage(2):
+              return Promise.resolve(dummyData2);
+          }
+        },
+      }) as any,
+  );
 });
 
 afterAll(() => {
-  global.fetch = unmockedFetch;
+  jest.clearAllMocks();
 });
 
-describe('Feature : lifestyle 데이터 모듈화, 추상화', () => {
+describe('Feature : 무한스크롤을 위한 lifestyle 데이터 모듈화, 추상화 Hook', () => {
   const makeWrapper = (): React.FunctionComponent => ({ children }: { children?: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 
   const sleep = (seconds: number) => new Promise((r) => setTimeout(r, seconds * 1000));
 
-  test('Scenario : 모듈화한 lifestyle 데이터를 가져올 수 있다', async () => {
-    const { result } = renderHook(() => useLifestyleList(), {
-      wrapper: makeWrapper(),
+  describe('Scenario : 모듈화한 lifestyle 데이터를 관리할 수 있다.', () => {
+    test('lifestyle 데이터를 읽을 수 있다', async () => {
+      const { result } = renderHook(() => useLifestyleList(), {
+        wrapper: makeWrapper(),
+      });
+
+      expect(result.current.status).toEqual('loading');
+
+      await sleep(1.5);
+
+      expect(result.current.status).toEqual('success');
+      expect(result.current.data.pages.length).toBeTruthy();
     });
 
-    expect(result.current.status).toEqual('loading');
+    test('다음 페이지의 데이터들을 가져올 수 있다.', async () => {
+      const { result } = renderHook(() => useLifestyleList(), {
+        wrapper: makeWrapper(),
+      });
 
-    await sleep(1.5);
+      const page1 = result.current.data.pages;
+      expect(result.current.status).toEqual('success');
+      expect(result.current.data.pages.length).toBeTruthy();
 
-    expect(result.current.status).toEqual('success');
-    expect(result.current.data.pages.length).toBeTruthy();
+      act(() => {
+        result.current.fetchNextPage({ pageParam: result.current.data.pages.length + 1 });
+      });
+
+      await sleep(1.5);
+      const page2 = result.current.data.pages;
+      expect(page1.length < page2.length).toBeTruthy();
+    });
   });
 
   describe('Scenario : 북마크 추가, 제거 기능으로 북마크한 데이터들을 관리 할 수 있다.', () => {

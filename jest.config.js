@@ -1,6 +1,6 @@
 module.exports = {
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'json'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
   transform: {
     '^.+\\.(js|jsx)?$': 'babel-jest',
     '^.+\\.(ts|tsx)?$': 'ts-jest',
@@ -11,7 +11,6 @@ module.exports = {
     '^~src(.*)$': '<rootDir>/src$1',
     '^~components(.*)$': '<rootDir>/src/components$1',
     '^~pages(.*)$': '<rootDir>/src/pages$1',
-    '^.+\\.json5?$': 'json5-jest',
   },
   testMatch: [
     '<rootDir>/**/*.test.(js|jsx|ts|tsx)',
