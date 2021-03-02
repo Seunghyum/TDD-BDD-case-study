@@ -29,7 +29,8 @@ function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> & Us
     {
       getNextPageParam: (lastPage, allPages) => {
         // 백엔드에서 값을 내려줄 때 전체 페이지, 현재 페이지를 주면 여기서 다음 페이지 / 이전 페이지가 있는지를 확인 후 로직을 수행하면 됨
-        return true;
+        if (allPages.length < 4) return allPages.length + 1;
+        else return false;
       },
       cacheTime: 3 * 60 * 1000,
     },

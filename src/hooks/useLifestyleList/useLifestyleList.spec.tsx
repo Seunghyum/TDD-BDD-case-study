@@ -4,8 +4,9 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import useLifestyleList from './useLifestyleList';
 
-import dummyData1 from './fixtures/dummy1.json';
-import dummyData2 from './fixtures/dummy2.json';
+import dummyData1 from '~src/__fixtures__/lifestyle1.json';
+import dummyData2 from '~src/__fixtures__/lifestyle2.json';
+import dummyData3 from '~src/__fixtures__/lifestyle3.json';
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,8 @@ beforeAll(() => {
               return Promise.resolve(dummyData1);
             case getUrlByPage(2):
               return Promise.resolve(dummyData2);
+            case getUrlByPage(3):
+              return Promise.resolve(dummyData3);
           }
         },
       }) as any,
