@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+- '15'
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- npm run test
+- npm run coveralls

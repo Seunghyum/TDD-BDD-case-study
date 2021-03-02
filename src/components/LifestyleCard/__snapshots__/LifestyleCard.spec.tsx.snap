@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LifestyleCard renders LifestyleCard component 1`] = `
+exports[
+  `Feature : LifestyleCard 컴포넌트로 유저의 라이프스타일을 카드로 보여준다 Scenario : 입력값에 따라 정상적으로 렌더링 되어야한다 
+      Given : imageUrl, nickname, profileImageUrl, isBookmarked, onClick을 설정할 수 있다.
+      When : imageUrl, nickname, profileImageUrl을 설정할 수 있다.
+      Then : 설정한 값들이 정상적으로 DOM Element에 렌더링된다
+     1`
+] = `
 <div
   class="sc-gsTCUz cwkpTi"
 >
@@ -8,7 +14,7 @@ exports[`LifestyleCard renders LifestyleCard component 1`] = `
     class="sc-dlfnbm kKmhwS"
   >
     <img
-      alt="profile thumbnail"
+      alt="test2.jpg"
       class="sc-hKgILt ebZgFx"
       src="test2.jpg"
     />
@@ -22,7 +28,7 @@ exports[`LifestyleCard renders LifestyleCard component 1`] = `
     class="sc-jSgupP dtZhcH"
   >
     <img
-      alt="content thumbnail"
+      alt="test1.jpg"
       class="sc-gKsewC fhZKnu"
       src="test1.jpg"
     />

@@ -1,9 +1,10 @@
-webpack.config.**.js
-**.spec.**
-jest.config.js
 node_modules/
 public/
 bin/
 build/
+coverage/
+webpack.config.**.js
+**.spec.**
+jest.config.js
 package.json
 yarn.lock
