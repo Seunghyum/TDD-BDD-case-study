@@ -65,11 +65,11 @@ function LifestyleCard({ imageUrl, nickname, profileImageUrl, isBookmarked, onCl
   return (
     <CardBlock>
       <Profile>
-        <ProfileImage src={profileImageUrl} alt="profile thumbnail" />
+        <ProfileImage src={profileImageUrl} alt={profileImageUrl} />
         <Nickname>{nickname}</Nickname>
       </Profile>
       <Content>
-        <ContentImage src={imageUrl} alt="content thumbnail" />
+        <ContentImage src={imageUrl} alt={imageUrl} />
         <BookmarkButton type="button" data-testid={testId} onClick={onClick}>
           <BookmarkIcon isBookmarked={isBookmarked} />
         </BookmarkButton>
