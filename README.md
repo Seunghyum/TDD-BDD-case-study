@@ -1,6 +1,16 @@
 # 프로젝트 설명 - BDD-case-study
 
-TDD / BDD를 적용해보며 
+TDD / BDD를 적용해보며 공부.
+
+## 사용 스택 및 개발 환경
+
+- React
+- Jest, Jest-Dom, testing-library/react
+- React-Query
+- Formatting : TSlint, prettier, Husky
+- CI/CD Tool : Travis CI, Coveralls
+
+## 테스트 커버리지
 
 [![Coverage Status](https://coveralls.io/repos/github/Seunghyum/BDD-case-study/badge.svg)](https://coveralls.io/github/Seunghyum/BDD-case-study)
 
@@ -8,12 +18,12 @@ TDD / BDD를 적용해보며
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-57.14%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-97.44%25-brightgreen.svg)    |
 
-## 작업 내용 및 느낀점
+## 작업 내용 및 배운점
 
 ### ✅ 프리즌테이션 컴포넌트(Stateless)
 
 - 예시 : ```src/components/LifestyleCard```
-- 느낀점
+- 배운점
   - TDD 처럼 해당 컴포넌트의 props 설정값들이 제대로 작동하는지는 TDD처럼 함수별, 기능별로 테스트 하는게 적합
   - A컴포넌트가 사용하는 B컴포넌트의 기능테스트는 B컴포넌트의 단위 테스트에서 진행한다고 가정하고 제외하는 것이 테스트에 의존성을 막을 수 있음.
     > 예를들어, 
@@ -28,7 +38,7 @@ TDD / BDD를 적용해보며
   - 필터링 기능 - 북마크만 볼 수 있게. 서버에 북마크한 데이터를 업데이트 하지 않으므로 프론트엔드에서 북마크한 리스트를 저장함.
   - 페이지 무한스크롤
 
-### 서버 API 콜 로직
+### ✅ 서버 API 요청 로직(React-Query & Hook)
 
 - with React-Query & Fetch API
 - 예시 : ```src/hooks/useLifestyleList.tsx```
@@ -37,13 +47,36 @@ TDD / BDD를 적용해보며
   - React Hook으로 래핑하여 bookmark 한 데이터들도 따로 다룸.
   - sessionStorage에 저장하여 컨트롤.
 
-- 작업 설명
+- 작업 설명 [issue 4](https://github.com/Seunghyum/TDD-BDD-case-study/issues/4)
   - mock으로 실제 API 콜이 아닌 fixture를 읽어와 실행하는 것으로 작업.
-  - 테스트 대상
-    - React-Query의 주기적 패치
-    - 북마크 체크 추가 & 삭제 로직 검증
-    - sessionStorage에 재대로 저장하고 있는지 검증
 
+- 테스트 대상
+  - [x] React-Query의 주기적 패치 -> cachTime 옵션
+  - [x] 북마크 체크 추가 & 삭제 로직 검증
+  - ~~sessionStorage에 재대로 저장하고 있는지 검증~~ -> 유저 경험상 앱을 새로고침했을 때 모든 데이터가 리셋되는 것이 더 자연스러움. 
+
+- 배운점
+  - React-Query를 이용하여 품목 리스트같은 catchTime(캐싱시간), staleTime(업데이트)가 중요한 데이터들을 캡슐화해서 체계적으로 관리할 수 있음.
+  - plugin을 이용해서 localstorage, sessionstorage와 연동하여 쓸 수도 있음 - [createLocalStoragePersistor plugin](https://react-query.tanstack.com/plugins/createLocalStoragePersistor)
+  - 상태관리 툴은 데이터 성격에 따라 아래와 같은 경우를 나누어 사용하면 될 것 같다.
+    - 서버와 동기화와 캐싱등의 관리가 중요한 데이터 : React-Query / SWR
+    - 유저정보와 같이 한번 받아서 동기화가 중요하지 않고 firebase같은 비동기 처리 로직가 많이 필요한 경우 : Redux / Redux-Saga or Thunk
+  - Redux-Saga or Thunk 등의 비동기 로직 처리가 많이 필요 없는 경우 굳이 Redux를 쓸 이유는 없을 것 같다. 유저 정보도 Custom hook 모듈화해서 브라우저 저장소에 저장하여 쓰면 됨.
+  - 참고
+    - [React-Query Caching 라이프 사이클]https://react-query.tanstack.com/guides/caching
+
+# 결론
+
+## 상태관리 툴은 데이터 성격에 따라 아래와 같은 경우를 나누어 사용하면 될 것 같다
+
+- 서버와 동기화와 캐싱등의 관리가 중요한 데이터 : React-Query / SWR
+- 유저정보와 같이 한번 받아서 동기화가 중요하지 않고 firebase같은 비동기 처리 로직가 많이 필요한 경우 : Redux / Redux-Saga or Thunk
+- Redux-Saga or Thunk 등의 비동기 로직 처리가 많이 필요 없는 경우 굳이 Redux를 쓸 이유는 없을 것 같다. 유저 정보도 Custom hook 모듈화해서 브라우저 저장소에 저장하여 쓰면 됨.
+
+## 컴포넌트, 모듈의 테스트는 그것의 성격별로 다른 컨셉으로 작성
+
+- 프리즌테이션 컴포넌트(Stateless), 기능모듈(ex-서버 API 요청) : TDD처럼... 해당 컴포넌트의 기능별, props별로
+- 컨테이너 컴포넌트(Stateful) : BDD처럼... 유저의 행동시나리오대로
 
 # 개념정리
 
