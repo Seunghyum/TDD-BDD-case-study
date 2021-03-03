@@ -2,6 +2,7 @@
   "name": "bdd-case-study",
   "version": "1.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/Seunghyum/TDD-BDD-case-study",
   "scripts": {
     "dev": "webpack serve --open --config ./build/webpack.config.dev.js",
     "lint": "tslint .",
@@ -13,7 +14,9 @@
     "test:cover": "jest --coverage",
     "test:make-badges": "yarn test:cover && istanbul-badges-readme",
     "prepare": "husky install",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^17.0.1",
@@ -46,6 +49,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^5.2.0",
     "husky": "^5.1.2",
     "istanbul-badges-readme": "^1.2.0",
