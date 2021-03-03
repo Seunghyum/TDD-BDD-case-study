@@ -4,8 +4,9 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import useLifestyleList from './useLifestyleList';
 
-import dummyData1 from './fixtures/dummy1.json';
-import dummyData2 from './fixtures/dummy2.json';
+import dummyData1 from '~src/__fixtures__/lifestyle1.json';
+import dummyData2 from '~src/__fixtures__/lifestyle2.json';
+import dummyData3 from '~src/__fixtures__/lifestyle3.json';
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,8 @@ beforeAll(() => {
               return Promise.resolve(dummyData1);
             case getUrlByPage(2):
               return Promise.resolve(dummyData2);
+            case getUrlByPage(3):
+              return Promise.resolve(dummyData3);
           }
         },
       }) as any,
@@ -72,36 +75,36 @@ describe('Feature : 무한스크롤을 위한 lifestyle 데이터 모듈화, 추
     });
   });
 
-  describe('Scenario : 북마크 추가, 제거 기능으로 북마크한 데이터들을 관리 할 수 있다.', () => {
-    test(`
-      Given : 인덱스로 북마크 데이터를 추가 or 제거 할 수 있다.
-      When : addBookmark 매서드로 인덱스 값을 실행 할 수 있다.
-      Then : 북마크 데이터에 해당 인덱스 값이 추가 or 제거된다.
-    `, async () => {
-      const { result } = renderHook(() => useLifestyleList(), {
-        wrapper: makeWrapper(),
-      });
+  // describe('Scenario : 북마크 추가, 제거 기능으로 북마크한 데이터들을 관리 할 수 있다.', () => {
+  //   test(`
+  //     Given : 인덱스로 북마크 데이터를 추가 or 제거 할 수 있다.
+  //     When : addBookmark 매서드로 인덱스 값을 실행 할 수 있다.
+  //     Then : 북마크 데이터에 해당 인덱스 값이 추가 or 제거된다.
+  //   `, async () => {
+  //     const { result } = renderHook(() => useLifestyleList(), {
+  //       wrapper: makeWrapper(),
+  //     });
 
-      await sleep(1.5);
+  //     await sleep(1.5);
 
-      expect(result.current.status).toEqual('success');
-      expect(result.current.data.pages.length).toBeTruthy();
+  //     expect(result.current.status).toEqual('success');
+  //     expect(result.current.data.pages.length).toBeTruthy();
 
-      act(() => {
-        result.current.addBookmark(0);
-        result.current.addBookmark(1);
-        result.current.addBookmark(2);
-      });
-      expect(result.current.bookmarks.has(0)).toBeTruthy();
-      expect(result.current.bookmarks.has(1)).toBeTruthy();
-      expect(result.current.bookmarks.has(2)).toBeTruthy();
+  //     act(() => {
+  //       result.current.addBookmark(0);
+  //       result.current.addBookmark(1);
+  //       result.current.addBookmark(2);
+  //     });
+  //     expect(result.current.bookmarks.has(0)).toBeTruthy();
+  //     expect(result.current.bookmarks.has(1)).toBeTruthy();
+  //     expect(result.current.bookmarks.has(2)).toBeTruthy();
 
-      act(() => {
-        result.current.removeBookmark(0);
-      });
-      expect(result.current.bookmarks.has(0)).toBeFalsy();
-      expect(result.current.bookmarks.has(1)).toBeTruthy();
-      expect(result.current.bookmarks.has(2)).toBeTruthy();
-    });
-  });
+  //     act(() => {
+  //       result.current.removeBookmark(0);
+  //     });
+  //     expect(result.current.bookmarks.has(0)).toBeFalsy();
+  //     expect(result.current.bookmarks.has(1)).toBeTruthy();
+  //     expect(result.current.bookmarks.has(2)).toBeTruthy();
+  //   });
+  // });
 });

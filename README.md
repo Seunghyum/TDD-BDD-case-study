@@ -16,7 +16,7 @@ TDD / BDD를 적용해보며 공부.
 
 | Statements                  | Branches                | Functions                 | Lines                |
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-57.14%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-97.44%25-brightgreen.svg)    |
+| ![Statements](https://img.shields.io/badge/Coverage-93.02%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-55.56%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg)    |
 
 ## 작업 내용 및 배운점
 
