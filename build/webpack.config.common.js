@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: resolve(__dirname, '../dist'),
+    publicPath: './',
   },
   resolve: {
     modules: ['node_modules', 'modules'],

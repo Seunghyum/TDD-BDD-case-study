@@ -1,13 +1,6 @@
 import { useInfiniteQuery, UseInfiniteQueryResult } from 'react-query';
-// import { useState } from 'react';
 
 export const INFINITE_LIFESTYLE = 'INFINITE_LIFESTYLE';
-
-// type UseLifestyleListReturn = {
-//   bookmarks: Set<number | number[]>;
-//   addBookmark: (index: number) => void;
-//   removeBookmark: (index: number) => void;
-// };
 
 export type LifestyleData = {
   id?: number;
@@ -17,11 +10,7 @@ export type LifestyleData = {
   description?: string;
 };
 
-// function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> & UseLifestyleListReturn {
 function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> {
-  // const [bookmarks, setBookmarks] = useState<Set<number | number[]>>(new Set([]));
-
-  // const result = useInfiniteQuery(
   return useInfiniteQuery(
     INFINITE_LIFESTYLE,
     ({ pageParam = 1 }) =>
@@ -37,21 +26,6 @@ function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> {
       cacheTime: 3 * 60 * 1000,
     },
   ) as UseInfiniteQueryResult<LifestyleData[], Error>;
-
-  // const addBookmark = (index: number) => {
-  //   if (bookmarks.has(index)) console.log('이미 추가된 인덱스입니다.');
-  //   else setBookmarks((prev) => new Set([...prev, index]));
-  // };
-
-  // const removeBookmark = (index: number) => {
-  //   if (bookmarks.has(index))
-  //     setBookmarks((prev) => {
-  //       prev.delete(index);
-  //       return new Set([...prev]);
-  //     });
-  // };
-
-  // return { ...result, bookmarks, addBookmark, removeBookmark };
 }
 
 export default useLifestyleList;
