@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config.common');
 module.exports = merge(baseConfig, {
   mode: 'production',
   output: {
-    publicPath: '/dist/',
+    publicPath: './',
   },
   plugins: [new HotModuleReplacementPlugin()],
 });
