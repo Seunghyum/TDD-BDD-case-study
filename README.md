@@ -4,9 +4,9 @@ TDD / BDD를 적용해보며 공부.
 
 ## 사용 스택 및 개발 환경
 
-- React
-- Jest, Jest-Dom, testing-library/react
-- React-Query
+- Js framework : React
+- Data synchronization & management lib : React-Query
+- Test lib : Jest, Jest-Dom, testing-library/react
 - Bundler : Webpack
 - Web API : IntersectionObserver, Fetch
 - Style : Styled-component
