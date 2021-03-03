@@ -1,4 +1,4 @@
-# 프로젝트 설명 - BDD-case-study
+# 프로젝트 설명 - TDD-BDD-case-study
 
 TDD / BDD를 적용해보며 공부.
 
@@ -7,13 +7,18 @@ TDD / BDD를 적용해보며 공부.
 - React
 - Jest, Jest-Dom, testing-library/react
 - React-Query
-- Formatting : TSlint, prettier, Husky
+- Bundler : Webpack
+- Web API : IntersectionObserver, Fetch
+- Style : Styled-component
+- Formatting : ESlint & TSlint, Prettier, Husky
 - CI/CD Tool : Travis CI, Coveralls
 
 ## 테스트 커버리지
 
+Coveralls 기준 
 [![Coverage Status](https://coveralls.io/repos/github/Seunghyum/BDD-case-study/badge.svg)](https://coveralls.io/github/Seunghyum/BDD-case-study)
 
+jest coverage 기준
 | Statements                  | Branches                | Functions                 | Lines                |
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-93.02%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-55.56%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg)    |
@@ -63,7 +68,7 @@ TDD / BDD를 적용해보며 공부.
     - 유저정보와 같이 한번 받아서 동기화가 중요하지 않고 firebase같은 비동기 처리 로직가 많이 필요한 경우 : Redux / Redux-Saga or Thunk
   - Redux-Saga or Thunk 등의 비동기 로직 처리가 많이 필요 없는 경우 굳이 Redux를 쓸 이유는 없을 것 같다. 유저 정보도 Custom hook 모듈화해서 브라우저 저장소에 저장하여 쓰면 됨.
   - 참고
-    - [React-Query Caching 라이프 사이클]https://react-query.tanstack.com/guides/caching
+    - [React-Query Caching 라이프 사이클](https://react-query.tanstack.com/guides/caching)
 
 # 결론
 
@@ -76,7 +81,7 @@ TDD / BDD를 적용해보며 공부.
 ## 컴포넌트, 모듈의 테스트는 그것의 성격별로 다른 컨셉으로 작성
 
 - 프리즌테이션 컴포넌트(Stateless), 기능모듈(ex-서버 API 요청) : TDD처럼... 해당 컴포넌트의 기능별, props별로
-- 컨테이너 컴포넌트(Stateful) : BDD처럼... 유저의 행동시나리오대로
+- 컨테이너 컴포넌트(Stateful) : BDD처럼... 유저의 행동 시나리오대로
 
 # 개념정리
 
