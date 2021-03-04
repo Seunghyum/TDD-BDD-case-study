@@ -25,7 +25,7 @@ function useLifestyleList(): UseInfiniteQueryResult<LifestyleData[], Error> {
       },
       cacheTime: 3 * 60 * 1000,
     },
-  ) as UseInfiniteQueryResult<LifestyleData[], Error>;
+  );
 }
 
 export default useLifestyleList;

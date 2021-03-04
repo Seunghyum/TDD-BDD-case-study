@@ -106,12 +106,13 @@ BDD는 시나리오를 기반으로 테스트 케이스를 작성하며 함수 �
 
 - [pop it 블로그 링크](https://www.popit.kr/bdd-behaviour-driven-development%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%84%EB%9E%B5%ED%95%9C-%EC%A0%95%EB%A6%AC/)
 - [실용적인 프론트엔드 테스트 전략 1](https://meetup.toast.com/posts/174)
+- [구현 세부 사항 테스트 - 번역 블로그](https://usecode.pw/testing-implementation-details/)
 
 ## 좋은 글
 
 ### 좋은 테스트의 조건
 
-[원본 글 링크](https://meetup.toast.com/posts/174)
+[토스트 밋업 - 원본 글 링크](https://meetup.toast.com/posts/174)
 
 테스트의 기회 비용을 가늠해보기 위해서는 좋은 테스트가 무엇인지를 알아야 한다. 어떤 테스트 코드를 작성하느냐에 따라서 작성이나 유지보수에 드는 비용도 다르고, 얻을 수 있는 효과도 다르기 때문이다.
 
