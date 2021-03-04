@@ -15,10 +15,10 @@ TDD / BDD를 적용해보며 공부.
 
 ## 테스트 커버리지
 
-Coveralls 기준 
-[![Coverage Status](https://coveralls.io/repos/github/Seunghyum/BDD-case-study/badge.svg)](https://coveralls.io/github/Seunghyum/BDD-case-study)
+Master 브런치 Coveralls Coverage Status
+[![Coverage Status](https://coveralls.io/repos/github/Seunghyum/TDD-BDD-case-study/badge.svg?branch=master)](https://coveralls.io/github/Seunghyum/TDD-BDD-case-study?branch=master)
 
-jest coverage 기준
+Jest Coverage Status
 | Statements                  | Branches                | Functions                 | Lines                |
 | --------------------------- | ----------------------- | ------------------------- | -------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-93.02%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-55.56%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-90.91%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-95.12%25-brightgreen.svg)    |
