@@ -12,11 +12,7 @@ module.exports = {
     '^~components(.*)$': '<rootDir>/src/components$1',
     '^~pages(.*)$': '<rootDir>/src/pages$1',
   },
-  testMatch: [
-    '<rootDir>/**/*.test.(js|jsx|ts|tsx)',
-    '<rootDir>/**/*.spec.(js|jsx|ts|tsx)',
-    '<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))',
-  ],
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  testMatch: ['<rootDir>/src/**/*.test.(js|jsx|ts|tsx)', '<rootDir>/src/**/*.spec.(js|jsx|ts|tsx)'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/'],
   coverageReporters: ['json-summary', 'text', 'lcov'],
 };
