@@ -1,7 +1,6 @@
 import { useInfiniteQuery, UseInfiniteQueryResult } from 'react-query';
 
 export const INFINITE_LIFESTYLE = 'INFINITE_LIFESTYLE';
-
 export type LifestyleData = {
   id?: number;
   image_url?: string;

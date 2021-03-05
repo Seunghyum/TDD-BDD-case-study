@@ -1,4 +1,4 @@
-import { LifestyleData } from '~src/hooks/useLifestyleList/useLifestyleList';
+import { LifestyleData } from '~src/hooks/useLifestyleList';
 
 class Bookmarks {
   data: LifestyleData[];

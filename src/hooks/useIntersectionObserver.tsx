@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useState } from 'react';
+import React, { RefObject, useEffect } from 'react';
 
 interface Iprops {
   root?: RefObject<HTMLElement> | undefined;
