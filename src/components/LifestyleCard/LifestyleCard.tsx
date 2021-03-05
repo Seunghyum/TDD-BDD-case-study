@@ -59,7 +59,7 @@ type CardItemProps = {
   onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
-export const testId = 'bookmarks';
+export const BOOKMARK_TEST_ID = 'BOOKMARK_TEST_ID';
 
 function LifestyleCard({ imageUrl, nickname, profileImageUrl, isBookmarked, onClick }: CardItemProps): ReactElement {
   return (
@@ -70,7 +70,7 @@ function LifestyleCard({ imageUrl, nickname, profileImageUrl, isBookmarked, onCl
       </Profile>
       <Content>
         <ContentImage src={imageUrl} alt={imageUrl} />
-        <BookmarkButton type="button" data-testid={testId} onClick={onClick}>
+        <BookmarkButton type="button" data-testid={BOOKMARK_TEST_ID} onClick={onClick}>
           <BookmarkIcon isBookmarked={isBookmarked} />
         </BookmarkButton>
       </Content>

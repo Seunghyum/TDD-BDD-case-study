@@ -34,7 +34,7 @@ exports[
     />
     <button
       class="sc-iBPRYJ bEsZG"
-      data-testid="bookmarks"
+      data-testid="BOOKMARK_TEST_ID"
       type="button"
     >
       <div

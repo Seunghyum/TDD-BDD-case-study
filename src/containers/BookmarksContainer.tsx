@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LifestyleCard from '~src/components/LifestyleCard';
-import { LifestyleData } from '~src/hooks/useLifestyleList/useLifestyleList';
+import { LifestyleData } from '~src/hooks/useLifestyleList';
 
 import Bookmarks from '~src/modules/Bookmarks';
 
