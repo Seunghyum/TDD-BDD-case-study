@@ -6,7 +6,9 @@ TDD / BDD를 적용해보며 공부.
 
 - Js framework : React
 - Data synchronization & management lib : React-Query
-- Test lib : Jest, Jest-Dom, testing-library/react
+- Test lib
+  - Unit Test : Jest, Jest-Dom, testing-library/react
+  - E2E Test : Cypress(E2E)
 - Bundler : Webpack
 - Web API : IntersectionObserver, Fetch
 - Style : Styled-component
