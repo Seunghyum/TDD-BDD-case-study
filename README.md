@@ -32,32 +32,37 @@ TDD / BDD를 적용해보며 공부.
 ### ✅ 프리즌테이션 컴포넌트(Stateless)
 
 - 예시 : ```src/components/LifestyleCard```
+  ![LifeStyleCard](./docs/LifeStyleCard.png)
 - 배운점
-  - TDD 처럼 해당 컴포넌트의 props 설정값들이 제대로 작동하는지는 TDD처럼 함수별, 기능별로 테스트 하는게 적합
+  - 단위 테스트로 파라미터와 함수 별로 테스트 하는게 적합
   - A컴포넌트가 사용하는 B컴포넌트의 기능테스트는 B컴포넌트의 단위 테스트에서 진행한다고 가정하고 제외하는 것이 테스트에 의존성을 막을 수 있음.
     > 예를들어, 
     > LifestyleCard안에서 사용하는 src/components/buttons/BookmarkButton 컴포넌트는 props 설정값에 따라 북마크 아이콘의 색상이 변해야 함.
     > LifestyleCard 안에서 BookmarkButton를 테스트할 경우 테스트에 *의존성이 생기김*
     > BookmarkButton 컴포넌트 테스트는 해당 테스트안에서 동작한다고 가정하고 스킵.
 
-### 컨테이너 컴포넌트(Stateful)
+### ✅ 컨테이너 컴포넌트(Stateful)
 
 - 예시 : ```src/containers/LifestyleCardListContainer.tsx```
+  ![containers](./docs/containers.png)
 - 기능 : LifestyleCard의 리스트를 관리하는 컨테이너
   - 필터링 기능 - 북마크만 볼 수 있게. 서버에 북마크한 데이터를 업데이트 하지 않으므로 프론트엔드에서 북마크한 리스트를 저장함.
-  - 페이지 무한스크롤
+  - 페이지 무한스크롤 - useLifestyleList
+- 테스트
+  - LifestyleCard, useLifestyleList 를 종합적으로 테스트해야 함. 통합 테스트로 진행.
+  ![infinte_scroll](./docs/infinte_scroll.png)
 
 ### ✅ 서버 API 요청 로직(React-Query & Hook)
 
 - with React-Query & Fetch API
 - 예시 : ```src/hooks/useLifestyleList.tsx```
+  ![useLifestyleList](./docs/useLifestyleList.png)
 - 기능
   - 서버 API 콜로 데이터를 가져옴.
   - React Hook으로 래핑하여 bookmark 한 데이터들도 따로 다룸.
-  - sessionStorage에 저장하여 컨트롤.
 
 - 작업 설명 [issue 4](https://github.com/Seunghyum/TDD-BDD-case-study/issues/4)
-  - mock으로 실제 API 콜이 아닌 fixture를 읽어와 실행하는 것으로 작업.
+  - 테스트는 jest mock 함수로 실제 API 콜이 아닌 fixture를 읽어와 실행하는 것으로 작업.
 
 - 테스트 대상
   - [x] React-Query의 주기적 패치 -> cachTime 옵션
@@ -84,8 +89,8 @@ TDD / BDD를 적용해보며 공부.
 
 ## 컴포넌트, 모듈의 테스트는 그것의 성격별로 다른 컨셉으로 작성
 
-- 프리즌테이션 컴포넌트(Stateless), 기능모듈(ex-서버 API 요청) : TDD처럼... 해당 컴포넌트의 기능별, props별로
-- 컨테이너 컴포넌트(Stateful) : BDD처럼... 유저의 행동 시나리오대로
+- 프리즌테이션 컴포넌트(Stateless), 기능모듈(ex-서버 API 요청) : 해당 컴포넌트의 함수 별, 파라미터 별로
+- 컨테이너 컴포넌트(Stateful) : 통합테스트 대상. 유저의 행동 시나리오대로 테스트하는 것이 적합.
 
 # 개념정리
 
