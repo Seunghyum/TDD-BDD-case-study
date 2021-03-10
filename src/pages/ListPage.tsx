@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Container from '~src/components/Container';
 import BookmarksContainer from '~src/containers/BookmarksContainer';
 import LifestyleCardListContainer from '~src/containers/LifestyleCardListContainer';

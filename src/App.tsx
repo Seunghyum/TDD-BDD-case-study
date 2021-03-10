@@ -1,10 +1,10 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-
 import { createGlobalStyle } from 'styled-components';
 import normalize from 'styled-normalize';
 import reset from 'styled-reset';
+
 import ListPage from './pages/ListPage';
 
 const GlobalStyles = createGlobalStyle`

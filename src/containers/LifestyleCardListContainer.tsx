@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import LifestyleCard from '~src/components/LifestyleCard';
-
 import useIntersectionObserver from '~src/hooks/useIntersectionObserver';
 import useLifestyleList, { LifestyleData } from '~src/hooks/useLifestyleList';
-
 import Bookmarks from '~src/modules/Bookmarks';
 
 const CardListBlock = styled.div`

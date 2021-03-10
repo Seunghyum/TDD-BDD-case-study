@@ -1,12 +1,12 @@
+import { act, renderHook } from '@testing-library/react-hooks';
 import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { act, renderHook } from '@testing-library/react-hooks';
-
-import useLifestyleList from './useLifestyleList';
 
 import dummyData1 from '~src/__fixtures__/lifestyle1.json';
 import dummyData2 from '~src/__fixtures__/lifestyle2.json';
 import dummyData3 from '~src/__fixtures__/lifestyle3.json';
+
+import useLifestyleList from './useLifestyleList';
 
 const queryClient = new QueryClient();
 

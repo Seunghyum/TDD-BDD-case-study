@@ -1,5 +1,6 @@
-import React from 'react';
 import { fireEvent, getByAltText, getByTestId, getByText, render } from '@testing-library/react';
+import React from 'react';
+
 import LifestyleCard, { BOOKMARK_TEST_ID } from './LifestyleCard';
 
 describe('Feature : LifestyleCard 컴포넌트로 유저의 라이프스타일을 카드로 보여준다', () => {

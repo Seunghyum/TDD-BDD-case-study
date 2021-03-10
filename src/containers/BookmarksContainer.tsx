@@ -2,7 +2,6 @@ import React from 'react';
 
 import LifestyleCard from '~src/components/LifestyleCard';
 import { LifestyleData } from '~src/hooks/useLifestyleList';
-
 import Bookmarks from '~src/modules/Bookmarks';
 
 const BookmarksContainer: React.FC = () => {
