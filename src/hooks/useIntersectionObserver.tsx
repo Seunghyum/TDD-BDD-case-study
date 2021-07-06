@@ -18,7 +18,6 @@ export default function useIntersectionObserver({
   enabled = true,
 }: Iprops): void {
   useEffect(() => {
-    console.log('!! enabled : ', enabled);
     if (!enabled) {
       return;
     }
